@@ -11,7 +11,28 @@
 |
 */
 
+//Changed the default view to welcome
 Route::get('/', function()
 {
-	return View::make('hello');
+	return View::make('welcome');
+});
+
+
+//use users view for users
+Route::get('/users', function()
+{
+	return View::make('users');
+});
+
+
+//use fillertest view for fillertext
+Route::get('/fillertext', function()
+{
+	return View::make('fillertext');
+});
+
+//mapping xckd view for xckd
+Route::get('/xckd', function()
+{
+	return View::make('xckd');
 });
