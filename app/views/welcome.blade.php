@@ -12,10 +12,17 @@
         <ul>
             <li>Create a set of random users</li>
             <li>Create random Lorum Ipsom text</li>
-            <li>use the xckd password generation</li>
         </ul>
     </div>
     
+
+    <ul class="nav nav-tabs">
+        <li class="active"><a href="/"><span class="glyphicon glyphicon-home"></span>  Welcome</a></li>
+        <li><a href="/users"><span class="glyphicon glyphicon-user"></span> Users</a></li>
+        <li><a href="/fillertext"><span class="glyphicon glyphicon-comment"></span> Messages</a></li>
+    </ul>
+    <p/>
+
     <div class="panel panel-info">
         <div class="panel-heading">              
             <h3 class="panel-title">Random Users</h3>
@@ -36,15 +43,6 @@
 
     </div>
 
-     <div class="panel panel-info">
-        <div class="panel-heading">              
-            <h3 class="panel-title">XCKD Password Generator</h3>
-        </div>
-        <div class="panel-body">
-            This <a href="/xckd">link</a> generates teh xckd password
-        </div>
-
-    </div>
 </div>
 
 @stop

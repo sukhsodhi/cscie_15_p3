@@ -19,20 +19,45 @@ Route::get('/', function()
 
 
 //use users view for users
-Route::get('/users', function()
+Route::get('/users/{no_of_users?}', function($no_of_users='5')
 {
-	return View::make('users');
+	$userHelper = new UserHelper();
+
+	# If there no of users is passed in the query string
+	if(Input::get('no_of_users')) {
+		$no_of_users = Input::get('no_of_users');
+	}
+	
+
+
+	$users = $userHelper->get_users($no_of_users);
+	return View::make('users')->with('no_of_users', $no_of_users)
+			->with('users', $users);
 });
 
 
 //use fillertest view for fillertext
-Route::get('/fillertext', function()
+Route::get('/fillertext/{no_of_paras?}', function($no_of_paras='3')
 {
-	return View::make('fillertext');
+	
+	$paraHelper = new ParaHelper();
+
+	# If there no of users is passed in the query string
+	if(Input::get('no_of_paras')) {
+		$no_of_paras = Input::get('no_of_paras');
+	}
+	
+
+
+	$paras = $paraHelper->get_pargraphs($no_of_paras);
+	return View::make('fillertext')->with('no_of_paras', $no_of_paras)
+			->with('paras', $paras);
+
+
 });
 
 //mapping xckd view for xckd
-Route::get('/xckd', function()
+Route::get('/xkcd', function()
 {
-	return View::make('xckd');
+	return View::make('xkcd');
 });
